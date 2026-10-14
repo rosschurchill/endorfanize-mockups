@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Endorfanize · Book the Party</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Figtree:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF6F1}
+a{color:#A3208F}a:hover{color:#7A1569}
+</style>
+<script src="render.js"></script>
+<script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      accent: this.props.accent ?? '#B0249B',
+      services: [
+        { title: 'Private parties', text: 'Birthdays, anniversaries and house parties. Party classics from the 60s to the 90s, or house all night.', price: 'From [YOUR PRICE]', tint: '#FFE3D1' },
+        { title: "Children's parties", text: 'Clean versions only, games and a set that keeps the kids dancing.', price: 'From [YOUR PRICE]', tint: '#D9F1FB' },
+        { title: 'Clubs and bars', text: 'House, bass and old-school rave sets. Residencies welcome.', price: 'Ask for a quote', tint: '#F4DDF9' },
+        { title: 'Festivals', text: 'Big-room house and warehouse anthems, with sound and lights if needed.', price: 'Ask for a quote', tint: '#FFF1BF' }
+      ],
+      steps: [
+        { n: '1', title: 'Send your date', text: 'Fill in the form or email us with the date, venue and type of event.' },
+        { n: '2', title: 'Get a quote', text: 'We confirm availability and send a price for music, sound and lights.' },
+        { n: '3', title: 'Party', text: 'We set up, read the room and keep the dance floor full until the end.' }
+      ],
+      dates: [
+        { date: 'Sat 31 Oct 2026', title: '80s Party · Halloween', venue: 'The Beech Tree, BR5 4AG', badge: 'To be confirmed', badgeBg: '#FFE3D1' },
+        { date: 'Sat 28 Nov 2026', title: '80s Party', venue: 'The Beech Tree, BR5 4AG', badge: 'To be confirmed', badgeBg: '#FFE3D1' },
+        { date: 'Sat 26 Dec 2026', title: '80s Party · Boxing Day', venue: 'The Beech Tree, BR5 4AG', badge: 'To be confirmed', badgeBg: '#FFE3D1' },
+        { date: 'Sat 28 Mar 2026', title: '80s Party launch', venue: 'The Beech Tree, St Mary Cray', badge: 'Played', badgeBg: '#DDF3E4' },
+        { date: 'Fri 5 May 2023', title: 'Love for Life masquerade ball', venue: 'The Star by Liverpool Street', badge: 'Played', badgeBg: '#DDF3E4' }
+      ]
+    };
+  }
+}
+</script>
+</head>
+<body>
+<template id="dc-template">
+
+<div style="background: #FBF6F1; color: #1B1530; font-family: 'Figtree', sans-serif; min-height: 100vh">
+
+  <div style="background: #1B1530; color: #FFFFFF; font-weight: 700; font-size: 13px; text-align: center; padding: 8px 16px">DESIGN CONCEPT C · BOOK THE PARTY · NOT THE LIVE SITE</div>
+
+  <header style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+    <img src="assets/logo.jpg" alt="Endorfanize Entertainment" style="height: 52px; width: auto; border-radius: 10px">
+    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-weight: 600; font-size: 15px">
+      <a href="#events" style="color: #1B1530; text-decoration: none">Events we do</a>
+      <a href="#how" style="color: #1B1530; text-decoration: none">How it works</a>
+      <a href="#dates" style="color: #1B1530; text-decoration: none">Dates</a>
+      <a href="#enquire" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; padding: 12px 22px; border-radius: 12px; font-weight: 700">Get a quote</a>
+    </nav>
+  </header>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 0; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+    <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+      <span style="align-self: flex-start; background: #FFE3D1; color: #8A3A07; font-weight: 700; font-size: 14px; padding: 8px 14px; border-radius: 999px">Diary open for 2026</span>
+      <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 68px; line-height: 1.0; letter-spacing: -0.02em">The DJ that makes your guests say "best party ever".</h1>
+      <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #4A4360; max-width: 560px">Magik Gee brings the music, the sound system and the lights. Birthdays, private parties, children's parties, clubs and festivals across Kent and London.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#enquire" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; padding: 16px 26px; border-radius: 14px; font-weight: 700; font-size: 17px">Check my date</a>
+        <a href="https://www.mixcloud.com/magikgee/" style="background: #FFFFFF; border: 2px solid #1B1530; color: #1B1530; text-decoration: none; padding: 14px 24px; border-radius: 14px; font-weight: 700; font-size: 17px">Hear a mix</a>
+      </div>
+    </div>
+    <div style="flex: 1 1 420px; min-width: 0; position: relative">
+      <img src="assets/photo-09.jpg" alt="Guests dancing at the 80s night" style="width: 100%; height: 520px; object-fit: cover; border-radius: 28px; display: block">
+      <div style="position: absolute; left: -12px; bottom: 28px; background: #FFFFFF; border-radius: 18px; padding: 16px 20px; box-shadow: 0 12px 32px rgba(27,21,48,0.18); max-width: 260px">
+        <div style="font-weight: 700; font-size: 15px">80s Party at The Beech Tree</div>
+        <div style="color: #4A4360; font-size: 14px">Last Saturday of the month</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" style="max-width: 1240px; margin: 0 auto; padding: 112px 24px 0">
+    <h2 style="margin: 0 0 12px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 44px; letter-spacing: -0.01em">Events we do</h2>
+    <p style="margin: 0 0 32px; color: #4A4360; font-size: 17px">Every booking gets music matched to your crowd, with clean or explicit versions to suit.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
+      <sc-for list="{{services}}" as="s" hint-placeholder-count="4">
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 2px 0 rgba(27,21,48,0.06)">
+          <span style="width: 48px; height: 48px; border-radius: 14px; background: {{s.tint}}; display: flex; align-items: center; justify-content: center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+          </span>
+          <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800">{{s.title}}</div>
+          <div style="color: #4A4360; font-size: 15px; line-height: 1.55">{{s.text}}</div>
+          <div style="font-weight: 700; font-size: 15px; margin-top: auto">{{s.price}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="how" style="max-width: 1240px; margin: 0 auto; padding: 112px 24px 0">
+    <h2 style="margin: 0 0 32px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 44px; letter-spacing: -0.01em">How booking works</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+      <sc-for list="{{steps}}" as="st" hint-placeholder-count="3">
+        <div style="border-top: 4px solid {{accent}}; padding-top: 20px; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 40px; font-weight: 800; color: {{accent}}">{{st.n}}</span>
+          <span style="font-weight: 700; font-size: 19px">{{st.title}}</span>
+          <span style="color: #4A4360; font-size: 16px; line-height: 1.55">{{st.text}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 112px 24px 0">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+      <img src="assets/photo-01.jpg" alt="Crowd at the bar with the DJ decks" style="width: 100%; height: 220px; object-fit: cover; border-radius: 18px">
+      <img src="assets/photo-12.jpg" alt="Guest in an 80s costume T-shirt" style="width: 100%; height: 220px; object-fit: cover; border-radius: 18px">
+      <img src="assets/photo-10.jpg" alt="Guests posing for a photo" style="width: 100%; height: 220px; object-fit: cover; border-radius: 18px">
+      <img src="assets/photo-07.jpg" alt="Dance floor under coloured lights" style="width: 100%; height: 220px; object-fit: cover; border-radius: 18px">
+    </div>
+    <figure style="margin: 40px 0 0; background: #FFFFFF; border-radius: 24px; padding: 36px">
+      <blockquote style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; line-height: 1.3">"[A REAL REVIEW FROM A CLIENT GOES HERE]"</blockquote>
+      <figcaption style="margin-top: 14px; color: #4A4360">[Client name, event type]</figcaption>
+    </figure>
+  </section>
+
+  <section id="dates" style="max-width: 1240px; margin: 0 auto; padding: 112px 24px 0">
+    <h2 style="margin: 0 0 24px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 44px; letter-spacing: -0.01em">Where to catch Magik Gee</h2>
+    <div style="background: #FFFFFF; border-radius: 22px; overflow: hidden">
+      <sc-for list="{{dates}}" as="e" hint-placeholder-count="5">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; padding: 20px 26px; border-bottom: 1px solid #EFE6DD">
+          <span style="width: 150px; font-weight: 700">{{e.date}}</span>
+          <span style="flex: 1 1 240px; min-width: 0">{{e.title}} · <span style="color: #4A4360">{{e.venue}}</span></span>
+          <span style="font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: {{e.badgeBg}}; color: #1B1530">{{e.badge}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="enquire" style="max-width: 1240px; margin: 112px auto 0; padding: 0 24px">
+    <div style="background: #1B1530; color: #FFFFFF; border-radius: 32px; padding: 48px; display: flex; flex-wrap: wrap; gap: 40px">
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 44px; line-height: 1.05">Tell us about your party</h2>
+        <p style="margin: 0; color: #D6D1E6; font-size: 17px; line-height: 1.6">We reply within [X HOURS]. Prefer to chat? Email or WhatsApp us directly.</p>
+        <a href="mailto:endorfanizeentertainment@outlook.com?subject=Booking%20enquiry" style="color: #FFB98A; font-weight: 700">endorfanizeentertainment@outlook.com</a>
+        <span style="font-weight: 700">WhatsApp 07594 601259</span>
+        <img src="assets/logo-art.jpg" alt="" style="width: 100%; height: 160px; object-fit: cover; border-radius: 18px; margin-top: 8px">
+      </div>
+      <form style="flex: 999 1 460px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+        <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Your name<input type="text" style="padding: 14px; border-radius: 12px; border: 0; font: inherit; font-weight: 400"></label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Email<input type="email" style="padding: 14px; border-radius: 12px; border: 0; font: inherit; font-weight: 400"></label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Event date<input type="date" style="padding: 14px; border-radius: 12px; border: 0; font: inherit; font-weight: 400"></label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Type of event<select style="padding: 14px; border-radius: 12px; border: 0; font: inherit; font-weight: 400"><option>Private party</option><option>Children's party</option><option>Club night</option><option>Festival</option><option>Something else</option></select></label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px; grid-column: 1 / -1">Venue or town<input type="text" style="padding: 14px; border-radius: 12px; border: 0; font: inherit; font-weight: 400"></label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px; grid-column: 1 / -1">Anything else?<textarea rows="3" style="padding: 14px; border-radius: 12px; border: 0; font: inherit; font-weight: 400"></textarea></label>
+        <button type="button" style="grid-column: 1 / -1; background: {{accent}}; color: #FFFFFF; border: 0; padding: 18px; border-radius: 14px; font: inherit; font-weight: 700; font-size: 17px; cursor: pointer">Send enquiry (form coming later)</button>
+      </form>
+    </div>
+  </section>
+
+  <footer style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; color: #4A4360; font-size: 15px">
+    <span>Endorfanize Entertainment · Magik Gee · Kent</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; font-weight: 600">
+      <a href="https://www.mixcloud.com/magikgee/">Mixcloud</a>
+      <a href="https://www.instagram.com/magik_gee92/">Instagram</a>
+      <a href="https://www.tiktok.com/@endorfanize.enter">TikTok</a>
+      <a href="https://www.facebook.com/share/1BKctca8y5/">Facebook</a>
+    </div>
+  </footer>
+</div>
+</template>
+</body>
+</html>
