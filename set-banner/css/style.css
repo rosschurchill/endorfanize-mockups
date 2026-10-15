@@ -326,9 +326,9 @@ p { margin: 0; }
 .enquiry input, .enquiry select, .enquiry textarea { background: var(--bg); color: var(--ink); border: 1px solid var(--control-line); }
 .enquiry input:focus, .enquiry select:focus, .enquiry textarea:focus { border-color: var(--accent); }
 .enquiry select option { background: var(--bg); color: var(--ink); }
-/* The logo art sits on its own dark backdrop; screen blending drops that box on dark pages. */
-.brand img, .footer-logo { border-radius: 0; mix-blend-mode: screen; }
-.brand img { height: 64px; -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 60%, transparent 100%); mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 60%, transparent 100%); }
+/* The dark themes use a transparent logo, so it sits straight on the page. */
+.brand img, .footer-logo { border-radius: 0; }
+.brand img { height: 56px; }
 
 /* ---------- Night layout: a gig poster, not a template ---------- */
 :root {
@@ -439,16 +439,20 @@ h3 { font-size: var(--fs-xl); letter-spacing: 0.01em; }
 
 /* Hero */
 .set-hero { padding-top: clamp(32px, 6vw, 72px); }
-.set-hero-grid { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: end; }
+.set-hero-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+.set-hero-label { grid-column: 1 / -1; margin-bottom: -4px; }
 .set-hero-copy { display: flex; flex-direction: column; gap: 24px; }
 .set-hero h1 { display: flex; flex-direction: column; gap: 16px; }
 .h1-big { font-size: var(--fs-flyer); line-height: 0.86; }
 .h1-sub { font-family: var(--mono); font-weight: 500; font-size: var(--fs-md); letter-spacing: 0.08em; color: var(--accent); line-height: 1.3; }
 .set-hero .lead { color: var(--ink); max-width: 520px; }
+/* The photo is landscape: crop low so the people fill it, not the ceiling */
 .set-hero-photo { margin: 0; display: flex; flex-direction: column; gap: 8px; }
-.set-hero-photo img { width: 100%; height: clamp(300px, 42vw, 560px); object-fit: cover; border-radius: var(--radius); }
+.set-hero-photo img { width: 100%; height: clamp(280px, 70vw, 420px); object-fit: cover; object-position: center 70%; border-radius: var(--radius); }
 @media (min-width: 900px) {
-  .set-hero-grid { grid-template-columns: 1.25fr 1fr; gap: 48px; }
+  .set-hero-grid { grid-template-columns: 1.25fr 1fr; gap: 28px 48px; }
+  /* Photo runs from the top of the headline to the bottom of the buttons */
+  .set-hero-photo img { flex: 1; min-height: 0; height: auto; }
 }
 
 /* The waveform: the one bold element, and the one moment of motion */
