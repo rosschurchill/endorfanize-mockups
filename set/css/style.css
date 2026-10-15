@@ -458,7 +458,7 @@ h3 { font-size: var(--fs-xl); letter-spacing: 0.01em; }
   .wave g { transform-box: fill-box; transform-origin: center; animation: wave-in 800ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
   @keyframes wave-in { from { transform: scaleY(0.04); opacity: 0.4; } to { transform: scaleY(1); opacity: 1; } }
 }
-.genres-line { font-family: var(--mono); font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-top: 16px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.genres-line { font-family: var(--mono); font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-top: 16px; padding-bottom: 24px; border-bottom: 1px solid var(--line); text-align: center; text-wrap: balance; }
 
 /* Section heads */
 .set-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
@@ -534,3 +534,4 @@ h3 { font-size: var(--fs-xl); letter-spacing: 0.01em; }
 .socials-row { flex-direction: row; flex-wrap: wrap; gap: 12px 24px; }
 .wordmark { font-family: var(--flyer); font-weight: 900; text-transform: uppercase; font-size: clamp(56px, 15.5vw, 236px); line-height: 0.82; margin: 40px 0 16px; color: var(--surface-raised); overflow-wrap: anywhere; }
 .footer-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted); margin-top: 0; }
+.genres-line .genre { white-space: nowrap; }
