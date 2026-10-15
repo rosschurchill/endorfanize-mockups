@@ -31,5 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
     window.location.href = 'mailto:' + form.dataset.email +
       '?subject=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(lines.join('\n'));
+    // Some phones have no email app set up, so always show the fallback routes.
+    var status = form.querySelector('.form-status');
+    if (status) status.hidden = false;
   });
 });
