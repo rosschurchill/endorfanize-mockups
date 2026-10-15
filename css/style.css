@@ -1,3 +1,21 @@
+/* Self-hosted Google Fonts, SIL Open Font License. Made by scripts/fetch_fonts.py */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 600 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/bricolage-grotesque.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(../fonts/figtree.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 /* Endorfanize Entertainment. Look: concept C "Book the Party". */
 :root {
   --bg: #FBF6F1;
@@ -171,3 +189,20 @@ p { margin: 0; }
 .footer-h { font-size: 18px; margin-bottom: 12px; }
 .motto { font-style: normal; font-size: 15px; }
 .footer-base { margin-top: 32px; font-size: 14px; }
+
+/* Spacing utilities, so pages need no inline styles (keeps the CSP strict) */
+.mt-16 { margin-top: 16px; }
+.mt-20 { margin-top: 20px; }
+.section.pt-48 { padding-top: 48px; }
+.wrap.pt-24 { padding-top: 24px; }
+.page-head.pb-48 { padding-bottom: 48px; }
+
+/* About and FAQ */
+.about { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 5vw, 48px); }
+.about-copy { display: flex; flex-direction: column; gap: 14px; max-width: 720px; }
+.about-copy p { margin: 0; }
+.motto-line { font-family: var(--display); font-size: 22px; color: var(--accent); }
+.faq { display: flex; flex-direction: column; gap: 12px; max-width: 820px; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; }
+.faq summary { font-weight: 700; cursor: pointer; }
+.faq details p { margin: 10px 0 0; color: var(--muted); }
