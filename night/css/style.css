@@ -220,7 +220,7 @@ p { margin: 0; }
 .about { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 5vw, 48px); }
 .about-copy { display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
 .about-copy p { margin: 0; }
-.motto-line { font-family: var(--display); font-size: var(--fs-lg); color: var(--accent); }
+.motto-line { font-family: var(--display); font-size: var(--fs-lg); color: var(--accent); margin-top: 16px; }
 .faq { display: flex; flex-direction: column; gap: 12px; max-width: 820px; }
 .faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; }
 .faq summary { font-weight: 700; cursor: pointer; }
@@ -303,3 +303,88 @@ p { margin: 0; }
 .enquiry input:focus, .enquiry select:focus, .enquiry textarea:focus { border-color: var(--accent); }
 .enquiry select option { background: var(--bg); color: var(--ink); }
 .brand img, .footer-logo { border-radius: 8px; }
+
+/* ---------- Night layout: a gig poster, not a template ---------- */
+:root {
+  --fs-hero: clamp(48px, 9vw, 112px);
+  --scrim: rgba(11, 16, 32, 0.96);
+  --scrim-mid: rgba(11, 16, 32, 0.4);
+  --scrim-clear: rgba(11, 16, 32, 0);
+  --ease: 200ms ease;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn, a, .card { transition: background-color var(--ease), color var(--ease), border-color var(--ease); }
+}
+
+/* Header floats over the home hero */
+.page-home .site-header { position: absolute; left: 0; right: 0; border-bottom: 0; }
+
+/* Hero: the 80s night photo full width, headline set big at the bottom left */
+.hero-shell { position: relative; isolation: isolate; min-height: min(88vh, 860px); display: flex; align-items: flex-end; padding: 136px 0 64px; overflow: hidden; }
+.hero-shell .hero { display: block; padding-top: 0; width: 100%; }
+.hero-shell .hero-media { position: absolute; inset: 0; z-index: -1; }
+.hero-shell .hero-media img { width: 100%; height: 100%; border-radius: 0; object-fit: cover; object-position: center 35%; }
+.hero-shell .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--scrim-mid) 0%, var(--scrim-clear) 35%, var(--scrim) 92%), linear-gradient(90deg, var(--scrim) 0%, var(--scrim-clear) 75%); }
+.hero-shell .hero-copy { max-width: 820px; gap: 24px; }
+.hero-shell h1 { font-size: var(--fs-hero); line-height: 0.95; letter-spacing: -0.03em; }
+.hero-shell .lead { color: var(--ink); max-width: 560px; }
+.hero-shell .float-card { left: auto; right: 24px; bottom: 24px; }
+
+/* Genres as a flyer line-up */
+.genres { gap: 4px 0; margin-top: 0; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.genres li { border: 0; padding: 0; border-radius: 0; font-family: var(--display); font-size: var(--fs-md); color: var(--ink); }
+.genres li:not(:last-child)::after { content: "/"; color: var(--marker); margin: 0 12px; }
+
+/* Section heads: heading left, lead right on wide screens */
+@media (min-width: 900px) {
+  .section-head:has(.lead) { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 48px; }
+  .section-head:has(.lead) .lead { max-width: 440px; }
+}
+
+/* Services: one big photo panel for the main booking, the rest beside it */
+.services { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.services .card { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; background: var(--surface); }
+.services .card:first-child { min-height: 380px; justify-content: flex-end; border-color: var(--line); background: linear-gradient(180deg, var(--scrim-clear) 15%, var(--scrim) 80%), url("../img/20260328_215301-800.jpg") center / cover; }
+.services .card:first-child h3 { font-size: var(--fs-2xl); margin-top: auto; }
+.services .card:first-child .price { margin-top: 0; }
+.services .card:first-child p { color: var(--ink); max-width: 420px; }
+@media (min-width: 760px) {
+  .services { grid-template-columns: 1.5fr 1fr; grid-template-rows: auto auto; }
+  .services .card:first-child { grid-row: span 2; min-height: 460px; }
+}
+.included { border-top: 0; }
+
+/* Steps: big outlined numbers, rave-flyer style */
+.steps { gap: 0; border-top: 1px solid var(--line); }
+.steps li { border-top: 0; padding: 32px 24px 32px 0; }
+.steps li::before { font-size: 88px; color: transparent; -webkit-text-stroke: 2px var(--marker); margin-bottom: 8px; }
+@media (min-width: 760px) {
+  .steps li + li { border-left: 1px solid var(--line); padding-left: 24px; }
+}
+
+/* Gallery: a mosaic with one big shot */
+.gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; grid-auto-flow: dense; gap: 8px; }
+.gallery img, .gallery-wide img { height: 100%; border-radius: 6px; }
+/* Spans are counted so the grid closes with no gaps: home has 10 photos, the gallery page 12. */
+.gallery img:first-child { grid-column: span 2; grid-row: span 2; }
+.gallery:not(.gallery-wide) img:nth-child(4), .gallery:not(.gallery-wide) img:nth-child(7), .gallery:not(.gallery-wide) img:nth-child(10),
+.gallery-wide img:nth-child(8) { grid-column: span 2; }
+@media (min-width: 760px) {
+  .gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; }
+}
+
+/* About: the motto set large, the story beside it */
+.about { display: grid; grid-template-columns: 1fr; gap: 24px 64px; background: none; border: 0; border-radius: 0; padding: 48px 0 0; border-top: 1px solid var(--line); }
+.about .section-head { margin-bottom: 0; }
+.about .motto-line { margin: 0; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.1; color: var(--ink); }
+.about .motto-line::first-letter { color: var(--marker); }
+@media (min-width: 900px) {
+  .about { grid-template-columns: 1fr 1.1fr; }
+  .about .section-head { grid-column: 1 / -1; }
+  .about .motto-line { grid-column: 1; grid-row: 2; }
+  .about .about-copy { grid-column: 2; grid-row: 2; }
+}
+
+/* Footer: close the page quietly */
+.site-footer { background: var(--surface); }
+.footer-grid .plain-list { flex-direction: row; flex-wrap: wrap; gap: 8px 20px; }
