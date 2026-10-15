@@ -558,7 +558,13 @@ h3 { font-size: var(--fs-xl); letter-spacing: 0.01em; }
   mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
 }
 .enquiry { flex: none; }
+/* Mobile: the banner fills the top of the box and fades out behind the heading. */
 @media (max-width: 700px) {
-  .band-copy { min-height: 0; padding-top: 0; padding-bottom: 0; }
-  .band-copy .banner-thumb { position: relative; left: auto; order: -1; height: 200px; margin: 0 calc(-1 * var(--band-pad)) 8px; object-position: 85% center; }
+  .band-copy { min-height: 0; padding-top: 190px; padding-bottom: 8px; }
+  .band-copy .banner-thumb {
+    height: 280px; object-position: 88% center;
+    -webkit-mask-image: linear-gradient(180deg, #000 45%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 45%, transparent 100%);
+  }
 }
+.band-copy p:empty { display: none; }
