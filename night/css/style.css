@@ -302,7 +302,9 @@ p { margin: 0; }
 .enquiry input, .enquiry select, .enquiry textarea { background: var(--bg); color: var(--ink); border: 1px solid var(--control-line); }
 .enquiry input:focus, .enquiry select:focus, .enquiry textarea:focus { border-color: var(--accent); }
 .enquiry select option { background: var(--bg); color: var(--ink); }
-.brand img, .footer-logo { border-radius: 8px; }
+/* The logo art sits on its own dark backdrop; screen blending drops that box on dark pages. */
+.brand img, .footer-logo { border-radius: 0; mix-blend-mode: screen; }
+.brand img { height: 64px; -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 60%, transparent 100%); mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, #000 60%, transparent 100%); }
 
 /* ---------- Night layout: a gig poster, not a template ---------- */
 :root {
