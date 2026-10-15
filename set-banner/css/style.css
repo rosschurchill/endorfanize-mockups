@@ -502,12 +502,18 @@ h3 { font-size: var(--fs-xl); letter-spacing: 0.01em; }
 /* FAQ and steps in sleeve mono */
 .faq summary { font-family: var(--mono); font-weight: 500; font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: 0.05em; }
 .faq summary::marker { color: var(--accent); }
+.set-steps { text-align: center; }
+.set-steps .set-head { align-items: center; }
 .steps-line { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); }
-.steps-line li { display: flex; align-items: baseline; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); font-family: var(--flyer); font-weight: 900; text-transform: uppercase; font-size: clamp(32px, 4vw, 48px); line-height: 1; }
-.steps-line span { font-family: var(--mono); font-weight: 500; font-size: var(--fs-sm); color: var(--muted); width: 48px; flex-shrink: 0; }
+.steps-line li { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 32px 16px; border-bottom: 1px solid var(--line); }
+.steps-line span { font-family: var(--mono); font-weight: 500; font-size: var(--fs-sm); letter-spacing: 0.08em; color: var(--accent); }
+.steps-line strong { font-family: var(--flyer); font-weight: 900; text-transform: uppercase; font-size: clamp(32px, 4vw, 48px); line-height: 1; }
+.steps-line p { color: var(--muted); max-width: 300px; margin: 0; }
 @media (min-width: 760px) {
   .steps-line { grid-template-columns: repeat(3, 1fr); }
-  .steps-line li + li { border-left: 1px solid var(--line); padding-left: 24px; }
+  .steps-line li { border-bottom: 0; padding: 40px 24px; }
+  .steps-line li + li { border-left: 1px solid var(--line); }
+  .steps-line { border-bottom: 1px solid var(--line); }
 }
 
 /* The enquiry form is a ticket: perforated notches on both sides */
