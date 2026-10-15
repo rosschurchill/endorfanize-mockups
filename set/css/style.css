@@ -541,3 +541,19 @@ h3 { font-size: var(--fs-xl); letter-spacing: 0.01em; }
 .wordmark { font-family: var(--flyer); font-weight: 900; text-transform: uppercase; font-size: clamp(56px, 15.5vw, 236px); line-height: 0.82; margin: 40px 0 16px; color: var(--surface-raised); overflow-wrap: anywhere; }
 .footer-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted); margin-top: 0; }
 .genres-line .genre { white-space: nowrap; }
+/* Mobile footer: Email and WhatsApp share the first row, socials sit below, all centred */
+@media (max-width: 700px) {
+  .site-footer .wrap { text-align: center; }
+  .footer-row, .footer-base { justify-content: center; }
+  .footer-row .socials-row { flex-basis: 100%; justify-content: center; }
+}
+/* Touch screens have no hover: photos turn to full colour as they scroll into view, or just show in colour */
+@media (hover: none) {
+  .gallery img { filter: none; }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .gallery img { animation: duo-to-colour linear both; animation-timeline: view(); animation-range: entry 20% cover 45%; }
+      @keyframes duo-to-colour { from { filter: grayscale(1) sepia(1) hue-rotate(245deg) saturate(2.6) brightness(0.82) contrast(1.15); } to { filter: none; } }
+    }
+  }
+}
